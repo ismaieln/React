@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  width: 30vw;
+  line-height: 1.2;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.app-title {
+  margin: 30px 0;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.single-card-container {
+  border: 1px solid #707070;
+  padding: 15px 25px;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 12px;
+}
+
+.forecast-div {
+  margin-top: 10px;
+}
+
+.highlighted-info {
+  margin: 15px 0 0 0;
+  list-style-type: none;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    width: 90vw;
+  }
+}
