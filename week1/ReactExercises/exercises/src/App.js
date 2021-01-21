@@ -9,12 +9,43 @@ import moneyIcon from "./assets/coin.png";
 import chatIcon from "./assets/chat.png";
 
 function App() {
+  // information for the first exercise
   const hobbies = [
     "Surfing",
     "Rock climbing",
     "Mountain biking",
     "Breakdancing",
   ];
+
+  // Array of information for the second exercise
+  const info = [
+    {
+      image: deliveryIcon,
+      title: "Free shipping",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    },
+    {
+      image: moneyIcon,
+      title: "100% Money back",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    },
+    {
+      image: chatIcon,
+      title: "Online support 24/7",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    },
+  ];
+
+  const guarantees = info.map((ele) => (
+    <Guarantee
+      image={ele.image}
+      title={ele.title}
+      description={ele.description}
+    />
+  ));
 
   return (
     <div>
@@ -26,23 +57,7 @@ function App() {
       <p>
         <strong>Exercise 2:</strong> Perfect customer service!
       </p>
-      <div className="guarantee-container">
-        <Guarantee
-          image={deliveryIcon}
-          title="Free shipping"
-          descriptions="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-        />
-        <Guarantee
-          image={moneyIcon}
-          title="100% Money back"
-          descriptions="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-        />
-        <Guarantee
-          image={chatIcon}
-          title="Online support 24/7"
-          descriptions="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-        />
-      </div>
+      <div className="guarantee-container">{guarantees}</div>
 
       <p>
         <strong>Exercise 3:</strong> It's higher than 10!

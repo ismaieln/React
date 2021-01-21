@@ -1,13 +1,13 @@
 body {
   padding: 0;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 14px;
 }
 
 .hobbies-container {
-  margin-bottom: 2rem;
+  margin-bottom: 28px;
   border-bottom: 1px solid #c4c4c4;
   margin-bottom: 40px;
 }
@@ -19,14 +19,14 @@ body {
 .hobbies {
   padding: 0 10px 10px 10px;
   list-style-type: none;
-  line-height: 1.5em;
+  line-height: 21px;
 }
 
 .guarantee-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  grid-gap: 2rem;
+  grid-gap: 28px;
   border-bottom: 1px solid #c4c4c4;
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -40,12 +40,11 @@ body {
 
 .guarantee-image {
   place-self: center;
-  background-color: #aaa8a8;
   border-radius: 5px;
 }
 
 .guarantee-descriptions {
-  color: #4d4d4d;
+  color: #000000;
 }
 
 .counter-container {
@@ -53,7 +52,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   grid-gap: 5px;
-  width: 50%;
+  width: 100%;
 }
 .counter-feedback {
   align-self: center;
@@ -61,8 +60,8 @@ body {
 }
 
 .counter-btn {
-  background-color: #d1b4b4;
-  color: #000000;
+  background-color: #c4c4c4;
+  color: #ffffff;
   font-size: 14px;
   font-weight: bolder;
   border: none;
@@ -71,14 +70,14 @@ body {
   border-radius: 6px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   body {
     width: 90%;
   }
   .guarantee-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   .counter-container {
-    width: 100%;
+    width: 50%;
   }
 }
