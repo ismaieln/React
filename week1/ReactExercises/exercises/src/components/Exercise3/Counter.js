@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import Button from "./Button";
+import Count from "./Count";
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const increaseOne = () => setCount((xCount) => xCount + 1);
+  const decreaseOne = () => setCount((xCount) => xCount - 1);
+
   const feedback =
     count > 10 ? (
       <strong>It's higher than 10!</strong>
@@ -13,16 +18,12 @@ function Counter() {
 
   return (
     <div className="counter-container">
-      <button onClick={() => setCount(count + 1)} className="counter-btn">
-        Add 1!
-      </button>
-      <button onClick={() => setCount(count - 1)} className="counter-btn">
-        Sub 1!
-      </button>
-      <h1 className="counter-count">{count}</h1>
-      <div className="counter-feedback">
-        <p>{feedback}</p>
-      </div>
+      <Button setCount={increaseOne} text={"Increase One"} />
+      <Button setCount={decreaseOne} text={"Decrease One"} />
+
+      <Count count={count} />
+
+      <p>{feedback}</p>
     </div>
   );
 }
