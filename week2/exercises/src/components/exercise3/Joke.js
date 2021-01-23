@@ -1,11 +1,10 @@
 import React from "react";
 
-const Joke = () => {
-  return (
-    <div>
-      <h1>Joke</h1>
-    </div>
-  );
-};
+const Joke = (props) => (
+  <div>
+    <p>{props.setup}</p>
+    <p>{props.punchline}</p>
+  </div>
+);
 
 export default Joke;

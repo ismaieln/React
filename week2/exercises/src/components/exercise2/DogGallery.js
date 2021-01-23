@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import DogPhoto from "./DogPhoto";
 
@@ -22,8 +22,12 @@ const DogGallery = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    getDogPhoto();
+  }, []);
+
   return (
-    <div>
+    <div className="dogs">
       {isLoading && <p>'Loading......'</p>}
       {!hasError && <Button getDogPhoto={getDogPhoto} />}
       {!hasError && <DogPhoto ab={dogPhotos} />}

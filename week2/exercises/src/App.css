@@ -1,10 +1,22 @@
 .App {
-  text-align: center;
-  padding-left: 3rem;
-  list-style-type: none;
+  text-align: left;
+}
+
+.friend,
+.joke,
+.dogs {
+  border-bottom: 0.5px solid rgb(206, 205, 205);
+  padding: 20px 30px;
+}
+
+.dogs {
 }
 
 img {
   width: 200px;
   padding: 5px;
+}
+
+li {
+  list-style-type: none;
 }
