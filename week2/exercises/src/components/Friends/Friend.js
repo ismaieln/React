@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import FriendProfile from "./FriendProfile";
 
-const userAPI = "https://www.randomuser.me/api?results=1";
+const USER_API = "https://www.randomuser.me/api?results=1";
 
 const Friend = () => {
   const [friend, setFriend] = useState({});
@@ -12,7 +12,7 @@ const Friend = () => {
   async function getFriend() {
     try {
       setLoading(true);
-      const response = await fetch(userAPI);
+      const response = await fetch(USER_API);
       const data = await response.json();
       setLoading(false);
       const newData = data.results[0];

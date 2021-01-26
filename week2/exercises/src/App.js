@@ -1,7 +1,7 @@
 import "./App.css";
-import Friend from "./components/exercise1/Friend";
-import DogGallery from "./components/exercise2/DogGallery";
-import RandomJoke from "./components/exercise3/RandomJoke";
+import Friend from "./components/Friends/Friend";
+import DogGallery from "./components/DogsGallery/DogGallery";
+import RandomJoke from "./components/Jokes/RandomJoke";
 
 function App() {
   return (

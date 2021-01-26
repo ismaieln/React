@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Joke from "./Joke";
 
-const jokeUrl = "https://official-joke-api.appspot.com/random_joke";
+const JOKE_URL = "https://official-joke-api.appspot.com/random_joke";
 
 const RandomJoke = () => {
   const [joke, setJoke] = useState({});
@@ -12,7 +12,7 @@ const RandomJoke = () => {
   useEffect(async () => {
     setLoading(true);
     try {
-      const res = await fetch(jokeUrl);
+      const res = await fetch(JOKE_URL);
       const data = await res.json();
       setLoading(false);
       setJoke(data);
