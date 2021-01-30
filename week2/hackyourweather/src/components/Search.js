@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form({ onSubmit }) {
+function Search({ onSubmit }) {
   const [city, setCity] = useState("");
 
   const handleInputChange = (e) => {
@@ -41,4 +41,4 @@ function Form({ onSubmit }) {
   );
 }
 
-export default Form;
+export default Search;

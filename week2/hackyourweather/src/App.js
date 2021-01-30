@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CityCard from "./components/CityCard";
-import Form from "./components/Form";
+import Search from "./components/Search";
 import "./App.css";
 
 function App() {
@@ -43,9 +43,9 @@ function App() {
       <div className="row justify-content-center">
         <h1 className="py-3 text-center">Wether</h1>
         <div className="card-size">
-          <Form onSubmit={(city) => fetchWeather(city)} />
+          <Search onSubmit={(city) => fetchWeather(city)} />
           {isLoading && <p>'Loading......'</p>}
-          {weatherInfo && (
+          {JSON.stringify(weatherInfo) !== "{}" && (
             <div key={weatherInfo.key} className="row">
               <CityCard
                 cityName={weatherInfo.cityName}
