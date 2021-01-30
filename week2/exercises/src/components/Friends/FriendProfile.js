@@ -4,11 +4,12 @@ const FriendProfile = (props) => {
   return (
     <ul>
       <li>
-        <strong>Name: </strong> {`${props.friends.first} ${props.friends.last}`}
+        <strong>Name: </strong>
+        {`${props.friends.name.first} ${props.friends.name.last}`}
       </li>
       <li>
         <strong>Address:</strong>
-        {` ${props.friends.postcode} - ${props.friends.city}, ${props.friends.country}`}
+        {` ${props.friends.location.postcode} - ${props.friends.location.city}, ${props.friends.location.country}`}
       </li>
       <li>
         <strong>Email:</strong>
@@ -23,3 +24,13 @@ const FriendProfile = (props) => {
 };
 
 export default FriendProfile;
+
+// const dataObj = {
+//   first: `${newData.name.first}`,
+//   last: `${newData.name.last}`,
+//   postcode: `${newData.location.postcode}`,
+//   city: `${newData.location.city}`,
+//   country: `${newData.location.country}`,
+//   email: `${newData.email}`,
+//   phone: `${newData.phone}`,
+// };

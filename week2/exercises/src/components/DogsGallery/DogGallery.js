@@ -15,25 +15,31 @@ const DogGallery = () => {
       const res = await fetch(DOG_API);
       const dogData = await res.json();
       setLoading(false);
-      const newDogData = [...dogPhotos, dogData.message];
-      setDogPhotos(newDogData);
+      const newDogPhotos = [...dogPhotos, dogData.message];
+      setDogPhotos(newDogPhotos);
     } catch (err) {
       setError(true);
       setLoading(false);
     }
   };
+
   useEffect(() => {
     getDogPhoto();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="dogs">
       {isLoading && <p>'Loading......'</p>}
       {!hasError && <Button getDogPhoto={getDogPhoto} />}
-      {!hasError && <DogPhoto ab={dogPhotos} />}
+      {!hasError && <DogPhoto photos={dogPhotos} />}
       {hasError && <p>"SomeThing went wrong"</p>}
     </div>
   );
 };
 
 export default DogGallery;
+
+// useEffect(() => {
+//   getDogPhoto();
+// }, []);

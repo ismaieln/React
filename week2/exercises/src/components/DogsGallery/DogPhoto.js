@@ -3,13 +3,11 @@ import React from "react";
 const DogPhoto = (dogPhotos) => {
   return (
     <div>
-      {dogPhotos.ab.map((item) => (
-        <img src={item} alt="dogs" key={dogPhotos.ab.indexOf(item)} />
+      {dogPhotos.photos.map((photo) => (
+        <img src={photo} alt="dogs" key={dogPhotos.photos.indexOf(photo)} />
       ))}
     </div>
   );
 };
 
 export default DogPhoto;
-
-// <img src={dogPhotos.ab} alt="dogs" />;

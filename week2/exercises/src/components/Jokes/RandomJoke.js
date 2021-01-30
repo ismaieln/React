@@ -7,9 +7,8 @@ const RandomJoke = () => {
   const [joke, setJoke] = useState({});
   const [isLoading, setLoading] = useState(false);
   const [hasError, setError] = useState(false);
-  const [buttonClickCount, setButtonClickCount] = useState(0);
 
-  useEffect(async () => {
+  const fetchJoke = async () => {
     setLoading(true);
     try {
       const res = await fetch(JOKE_URL);
@@ -20,16 +19,16 @@ const RandomJoke = () => {
       setError(true);
       setLoading(false);
     }
-  }, [buttonClickCount]);
+  };
+
+  useEffect(() => {
+    fetchJoke();
+  }, []);
 
   return (
     <div className="joke">
       {isLoading && <p>Loading......</p>}
-      {!hasError && (
-        <button onClick={() => setButtonClickCount(buttonClickCount + 1)}>
-          Get a random joke
-        </button>
-      )}
+      {!hasError && <button onClick={fetchJoke}>Get a random joke</button>}
       {!hasError && <Joke setup={joke.setup} punchline={joke.punchline} />}
       {hasError && <p>I don't know what is going on</p>}
     </div>

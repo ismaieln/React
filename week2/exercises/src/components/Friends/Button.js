@@ -1,11 +1,7 @@
 import React from "react";
 
-const Button = ({ getFriend }) => {
-  return (
-    <div>
-      <button onClick={getFriend}>Get a friend</button>
-    </div>
-  );
-};
+const Button = ({ getFriend }) => (
+  <button onClick={getFriend}>Get a friend</button>
+);
 
 export default Button;

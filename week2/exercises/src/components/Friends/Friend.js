@@ -13,19 +13,10 @@ const Friend = () => {
     try {
       setLoading(true);
       const response = await fetch(USER_API);
-      const data = await response.json();
+      const newFriend = await response.json();
       setLoading(false);
-      const newData = data.results[0];
-      const dataObj = {
-        first: `${newData.name.first}`,
-        last: `${newData.name.last}`,
-        postcode: `${newData.location.postcode}`,
-        city: `${newData.location.city}`,
-        country: `${newData.location.country}`,
-        email: `${newData.email}`,
-        phone: `${newData.phone}`,
-      };
-      setFriend(dataObj);
+
+      setFriend(newFriend.results[0]);
     } catch (err) {
       setError(true);
       setLoading(false);
@@ -40,7 +31,7 @@ const Friend = () => {
     <div className="friend">
       {isLoading && <p>Loading......</p>}
       {!hasError && <Button getFriend={getFriend} />}
-      {!hasError && <FriendProfile friends={friend} />}
+      {JSON.stringify(friend) !== "{}" && <FriendProfile friends={friend} />}
       {hasError && <p>I don't know what is going on</p>}
     </div>
   );
