@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CityCard from "./components/CitiesList/CityCard";
 import Search from "./components/Search";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -44,40 +43,37 @@ function App() {
   function removeCity(id) {
     setCities(cities.filter((city) => city.city.id !== id));
   }
+
   function showForecast(id) {
     setForecast(cities.filter((city) => city.city.id === id));
   }
 
   return (
-    <Router>
-      <Route path="/">
-        <div className="container">
-          <div className="row justify-content-center">
-            <h1 className="py-3 text-center">Wether</h1>
-            <div className="card-size">
-              <Search onSubmit={(city) => fetchWeather(city)} />
-              {!hasValue && (
-                <p className="fw-bold text-danger">
-                  The city name is empty, Please enter a correct city name
-                </p>
-              )}
-              {errorMessage && (
-                <p className="fw-bold text-danger">{errorMessage}</p>
-              )}
-              {isLoading && <p className="fw-bold">Loading......</p>}
-              {cities.length !== 0 && (
-                <CityCard
-                  allCities={cities}
-                  onRemove={removeCity}
-                  onClickForecast={showForecast}
-                  forecast={forecast}
-                />
-              )}
-            </div>
-          </div>
+    <div className="container">
+      <div className="row justify-content-center">
+        <h1 className="py-3 text-center">Wether</h1>
+        <div className="card-size">
+          <Search onSubmit={(city) => fetchWeather(city)} />
+          {!hasValue && (
+            <p className="fw-bold text-danger">
+              The city name is empty, Please enter a correct city name
+            </p>
+          )}
+          {errorMessage && (
+            <p className="fw-bold text-danger">{errorMessage}</p>
+          )}
+          {isLoading && <p className="fw-bold">Loading......</p>}
+          {cities.length !== 0 && (
+            <CityCard
+              allCities={cities}
+              onRemove={removeCity}
+              onClickForecast={showForecast}
+              forecast={forecast}
+            />
+          )}
         </div>
-      </Route>
-    </Router>
+      </div>
+    </div>
   );
 }
 
