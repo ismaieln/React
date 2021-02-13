@@ -27,7 +27,9 @@ function App() {
         }
         const newCity = await res.json();
 
-        const currentCities = cities.filter((el) => el.id !== newCity.city.id);
+        const currentCities = cities.filter(
+          (el) => el.city.id !== newCity.city.id
+        );
         setCities([newCity, ...currentCities]);
         setLoading(false);
       } catch (err) {
