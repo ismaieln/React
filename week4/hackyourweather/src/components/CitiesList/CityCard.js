@@ -46,7 +46,7 @@ function CityCard(props) {
         </div>
       </Route>
       <Route path="/forecast">
-        <Forecast allCities={forecast} />
+        <Forecast allCities={forecast} showForm={props.formState} />
       </Route>
     </Router>
   );

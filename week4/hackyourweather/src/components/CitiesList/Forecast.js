@@ -49,6 +49,7 @@ export default function Forecast(props) {
         className="h5 p-5 btn fw-bold text-decoration-underline"
         onClick={() => {
           history.goBack();
+          props.showForm(true);
         }}
       >
         &#65124; &#65124; &#65124; Go Back
